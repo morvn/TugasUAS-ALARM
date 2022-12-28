@@ -23,10 +23,11 @@ def shutdown():
         current_time = datetime.datetime.now()
         now = current_time.strftime("%H:%M:%S")
         date = current_time.strftime("%d/%m/%Y")
-        print("Waktu Telah Diatur Pada:",date)
-        if now == os.system("shutdown /s"):
+        print("Waktu Telah Diatur Pada:", date)
+        if now == f"{hour.get()}:{min.get()}:{sec.get()}":
+            os.system("shutdown /s")
             break
-            
+
 def actual_time():
     pengaturan = f"{hour.get()}:{min.get()}:{sec.get()}"
     alarm(pengaturan)
